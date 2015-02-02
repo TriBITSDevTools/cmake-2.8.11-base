@@ -6,7 +6,7 @@
                           << symlinkedIt->first << std::endl);
 +          std::string destDir =
 +            cmSystemTools::GetFilenamePath(symlinkedIt->second);
-+          if(!cmSystemTools::MakeDirectory(destDir))
++          if(!cmSystemTools::MakeDirectory(destDir.c_str()))
 +          {
 +            cmCPackLogger(cmCPackLog::LOG_DEBUG, "Cannot create dir: "
 +              << destDir
